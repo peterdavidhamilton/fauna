@@ -1,0 +1,44 @@
+version: 1
+
+dn: dc=earth
+objectClass: top
+objectClass: domain
+description: Earth's evolutionary taxa
+o: Tree of Life
+
+dn: ou=fauna, dc=earth
+ou: fauna
+objectClass: organizationalUnit
+
+
+dn: species=Homo sapiens, ou=fauna, dc=earth
+cn: Human
+species: Homo sapiens
+genus: Homo
+family: Hominidae
+order: Primates
+objectClass: mammalia
+objectClass: extensibleObject
+description: Modern humans are the only extant members of the subtribe Hominina, a branch of the tribe Hominini belonging to the family of great apes.
+populationCount: 7582530942
+extinct: FALSE
+endangered: FALSE
+labeledURI: https://en.wikipedia.org/wiki/Human
+study: anthropology
+
+
+dn: species=Ounalashkastylus tomidai, ou=fauna, dc=earth
+cn: Desmostylian
+species: Ounalashkastylus tomidai
+genus: Ounalashkastylus
+family: Desmostylidae
+order: Desmostylia
+objectClass: mammalia
+objectClass: extensibleObject
+description: This species honours distinguished Japanese vertebrate palaeontologist Yukimitsu Tomida
+translation: From Greek δεσμά desma, "bundle", and στῦλος stylos, "pillar"; and refers to the unique teeth morphology
+labeledURI: https://www.youtube.com/watch?v=AeTvZ1AH7mM
+labeledURI: http://fossilworks.org/?a=taxonInfo&taxon_no=329742
+labeledURI: https://en.wikipedia.org/wiki/Desmostylia
+extinct: TRUE
+

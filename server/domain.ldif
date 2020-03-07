@@ -1,0 +1,6 @@
+dn: dc=earth
+objectClass: top
+objectClass: domain
+description: Earth's evolutionary taxa
+o: Tree of Life
+

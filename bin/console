@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'dotenv/load'
+require 'pry-byebug'
+require 'rom-ldap'
+require 'logger'
+require 'pathname'
+
+require 'rom-changeset'
+require 'rom-repository'
+
+root = Pathname(__dir__).dirname
+
+$LOAD_PATH.unshift(root)
+
+log_path = root.join('log/fauna.log')
+log_file = File.open(log_path, 'a')
+logger = Logger.new(log_file)
+
+config = ROM::Configuration.new(:ldap, nil, extensions: %i[compatibility], logger: logger)
+config.auto_registration(root, namespace: false)
+
+rom = ROM.container(config)
+
+Pry.start(rom)
