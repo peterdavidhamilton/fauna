@@ -15,7 +15,6 @@ services:
       - ldap
     volumes:
       - .:/src
-      - ./tmp/vendor:/src/vendor
     environment:
       - LDAPURI=ldap://fauna-ldap:1389
       - WAIT=20

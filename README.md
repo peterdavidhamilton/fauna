@@ -64,5 +64,5 @@ relations[:fauna].to_a
 
 ## Development
 
-Place built gems *(ldap-ber-x.x.x.gem, rom-ldap-x.x.x.gem)* in `./tmp/vendor/cache`
+Place gems under development *(ldap-ber-x.x.x.gem, rom-ldap-x.x.x.gem)* in `./vendor/cache`.
 
