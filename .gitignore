@@ -1,4 +1,5 @@
 .bundle
 log
 tmp
+vendor
 Gemfile.lock

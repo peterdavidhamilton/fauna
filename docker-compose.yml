@@ -5,22 +5,31 @@ networks:
   fauna:
 
 services:
-
-  ldap:
-    container_name: fauna
+  console:
+    container_name: fauna-console
+    tty: true
+    stdin_open: true
     build:
-      context: ./server
-      args:
-        version: 4.4.4
+      context: .
+    depends_on:
+      - ldap
+    volumes:
+      - .:/src
+      - ./tmp/vendor:/src/vendor
+    environment:
+      - LDAPURI=ldap://fauna-ldap:1389
+      - WAIT=20
+    networks:
+      - fauna
+
+
+  # https://hub.docker.com/r/openidentityplatform/opendj/
+  ldap:
+    container_name: fauna-ldap
+    image: openidentityplatform/opendj:latest
     ports:
-      - 389:389
-      - 636:636
-      - 4444:4444
-    healthcheck:
-      test: curl ldap://127.0.0.1:389/dc=earth || exit 1
-      interval: 1m30s
-      timeout: 10s
-      retries: 1
+      - 389:1389
+      - 636:1636
     environment:
       BASE_DN: dc=earth
       ROOT_USER_DN: cn=Darwin

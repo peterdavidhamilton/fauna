@@ -1,10 +1,16 @@
 version: 1
 
+
 dn: dc=earth
-objectClass: top
-objectClass: domain
+changetype: modify
+add: description
 description: Earth's evolutionary taxa
+
+dn: dc=earth
+changetype: modify
+add: o
 o: Tree of Life
+
 
 dn: ou=fauna, dc=earth
 ou: fauna
